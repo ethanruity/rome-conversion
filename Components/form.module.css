@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 15rem;
+}
+
+.label {
+  font-size: 1.3rem;
+}
+
+.input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 3px solid black;
+  outline: none;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-bottom: 3px solid rgb(212, 102, 83);
+  background: transparent;
+}
+
+.btn {
+  background: transparent;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-radius: 50px;
+  border: 3px solid black;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.btn:hover,
+.btn:active {
+  border: 3px solid rgb(212, 102, 83);
+}
+
+.result {
+  border-bottom: 3px solid black;
+  margin: auto;
+  margin-top: 3rem;
+  width: 15rem;
+  font-size: 2.3rem;
+}
