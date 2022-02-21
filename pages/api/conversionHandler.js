@@ -8,7 +8,11 @@ export default function romanHandler(req, res) {
     const result = handleRoman(input);
     res.status(200).json({ result });
   } else if (typeof parsed === "number") {
-    const result = handleNumber(parsed);
-    res.status(200).json({ result });
+    if (parsed < 1) {
+      res.status(200).json({ result: "Positive number please" });
+    } else {
+      const result = handleNumber(parsed);
+      res.status(200).json({ result });
+    }
   }
 }

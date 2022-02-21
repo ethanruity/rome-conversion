@@ -4,22 +4,6 @@ import styles from "../styles/Home.module.css";
 import Form from "../Components/form";
 
 export default function Home() {
-  const [input, setInput] = useState();
-  const [result, setResult] = useState();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch("/api/conversionHandler", {
-      method: "POST",
-      body: JSON.stringify({ input }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    setResult(data.result);
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Rome!</h1>
-        <p>Convert any Number or Roman Numeral</p>
+        <p>Convert and Compute any Number or Roman Numeral</p>
       </main>
       <Form />
     </div>

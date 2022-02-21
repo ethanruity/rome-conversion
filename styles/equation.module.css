@@ -1,0 +1,67 @@
+.problem {
+  display: flex;
+  width: 40rem;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.num {
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 3px solid black;
+  outline: none;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: inherit;
+  width: 10rem;
+}
+
+.num:focus {
+  border-bottom: 3px solid rgb(212, 102, 83);
+  background: transparent;
+}
+
+.symbol {
+  font-size: 1.5rem;
+  color: rgb(212, 102, 83);
+}
+
+.btn {
+  background: transparent;
+  font-family: inherit;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: 3px solid black;
+}
+
+.btn:active,
+.btn:hover {
+  border: 3px solid rgb(212, 102, 83);
+}
+
+.result {
+  border-bottom: 3px solid rgb(212, 102, 83);
+  margin-top: 3rem;
+  width: 10rem;
+  font-size: 2.3rem;
+}
+
+.swap {
+  background: transparent;
+  font-family: inherit;
+  border-radius: 100%;
+  height: 1.8rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.swap:active,
+.swap:hover {
+  color: rgb(212, 102, 83);
+  transform: scale(1.1);
+}
