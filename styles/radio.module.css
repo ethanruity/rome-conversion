@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  width: 38rem;
+  margin: auto;
+  justify-content: space-between;
+  padding: 11px;
+  border-radius: 50px;
+  box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #d1d9e6 inset;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio + span {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.radio:checked + span {
+  border: 3px solid rgb(212, 102, 83);
+  border-radius: 50px;
+}

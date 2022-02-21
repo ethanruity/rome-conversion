@@ -1,40 +1,71 @@
 import React, { useState } from "react";
-import styles from "./form.module.css";
+import Convert from "./convert";
+import Equation from "./equation";
+import styles from "../styles/radio.module.css";
 
 export default function Form() {
-  const [input, setInput] = useState();
-  const [result, setResult] = useState();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch("/api/conversionHandler", {
-      method: "POST",
-      body: JSON.stringify({ input }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    setResult(data.result);
-  };
+  const [selected, setSelected] = useState("convert");
 
   return (
     <div>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          placeholder="Enter a Value"
-          id="conversion"
-          name="conversion"
-          type="text"
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button className={styles.btn} type="submit">
-          Convert
-        </button>
-      </form>
-
-      <p className={styles.result}>{result}</p>
+      <div className={styles.container}>
+        <label>
+          <input
+            className={styles.radio}
+            defaultChecked
+            type="radio"
+            name="math"
+            value="convert"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          <span>Conversion</span>
+        </label>
+        <label>
+          <input
+            className={styles.radio}
+            type="radio"
+            name="math"
+            value="add"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          <span>Add</span>
+        </label>
+        <label>
+          <input
+            className={styles.radio}
+            type="radio"
+            name="math"
+            value="subtract"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          <span>Subtract</span>
+        </label>
+        <label>
+          <input
+            className={styles.radio}
+            type="radio"
+            name="math"
+            value="multiply"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          <span>Multiply</span>
+        </label>
+        <label>
+          <input
+            className={styles.radio}
+            type="radio"
+            name="math"
+            value="divide"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          <span>Divide</span>
+        </label>
+      </div>
+      {selected === "convert" && <Convert />}
+      {selected === "add" && <Equation symbol="+" />}
+      {selected === "subtract" && <Equation symbol="-" />}
+      {selected === "multiply" && <Equation symbol="*" />}
+      {selected === "divide" && <Equation symbol="/" />}
     </div>
   );
 }

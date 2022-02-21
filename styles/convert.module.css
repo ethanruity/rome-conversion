@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: auto;
   width: 15rem;
+  margin-top: 3rem;
 }
 
 .label {
@@ -33,6 +34,7 @@
   border: 3px solid black;
   font-size: 1.5rem;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -41,7 +43,7 @@
 }
 
 .result {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgb(212, 102, 83);
   margin: auto;
   margin-top: 3rem;
   width: 15rem;
